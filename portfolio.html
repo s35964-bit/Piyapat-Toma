@@ -15,7 +15,7 @@
     font-family: sans-serif; 
     background-color: #f4f7f6; 
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
   }
 
   /* --- แถบเมนูด้านบน (Navbar) --- */
@@ -33,9 +33,9 @@
   .navbar a {
     color: white;
     text-align: center;
-    padding: 14px 20px;
+    padding: 16px 24px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     transition: background-color 0.3s;
   }
 
@@ -50,23 +50,47 @@
   /* ---------------------------- */
 
   .container { 
-    max-width: 800px; 
-    margin: 30px auto 0 auto; 
+    max-width: 1000px; 
+    margin: 40px auto 0 auto; 
     padding: 0 20px;
   }
 
+  /* ปรับขนาดหัวข้อเรื่องให้ใหญ่ขึ้น */
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  /* ปรับขนาดรูปโปรไฟล์ */
+  .profile-img {
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  /* ปรับขนาดตัวหนังสือคำอธิบาย */
+  .intro-text {
+    font-size: 1.4rem;
+    margin-top: 25px;
+    color: #333;
+  }
+
+  /* ปรับขนาดปุ่มกดให้ใหญ่ขึ้น */
   .btn { 
     display: inline-block; 
     background: #2c3e50; 
     color: white; 
-    padding: 10px 20px; 
+    padding: 15px 35px; 
+    font-size: 1.2rem;
     text-decoration: none; 
-    border-radius: 5px; 
-    margin-top: 30px; 
+    border-radius: 8px; 
+    margin-top: 35px; 
+    transition: background-color 0.3s, transform 0.2s;
   }
 
   .btn:hover {
     background-color: #1abc9c;
+    transform: scale(1.05);
   }
 </style>
 </head>
@@ -82,9 +106,8 @@
 
 <div class="container" id="about">
   <h1>แฟ้มสะสมงาน (Portfolio) ปิยพัทธ์ โตมา</h1>
-  <br>
-  <img src="img.jpg" alt="รูปโปรไฟล์ของฉัน" width="200" style="border-radius: 8px;">
-  <p style="margin-top: 15px;">นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
+  <img src="img.jpg" alt="รูปโปรไฟล์ของฉัน" class="profile-img">
+  <p class="intro-text">นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
 
   <!-- ปุ่มกดกลับหน้าแรก -->
   <a href="index.html" class="btn">กลับหน้าแรก</a>
