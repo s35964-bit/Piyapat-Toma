@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ยินดีต้อนรับ - ปิยพัทธ์ โตมา (BUU Fine Arts)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --buu-gold: #f59e0b;
+            --buu-gold-hover: #d97706;
+            --buu-gold-light: rgba(245, 158, 11, 0.12);
+            --bg-color: #fcfdff;
+            --card-bg: #6d6d6d;
+            --card-border: rgba(150, 133, 80, 0.911);
+            --text-main: #ffffff;
+            --text-sub: #fdfdfd;
+            --nav-width: 270px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            display: flex; 
+            min-height: 100vh; 
+            background-image: radial-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 0); 
+            background-size: 28px 28px; 
+        }
+        
+        .sidebar {
+            width: var(--nav-width); 
+            background:  #2c2c2b; 
+            padding: 2.5rem 1.5rem; 
+            position: fixed; 
+            height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            border-right: 1px solid var(--card-border); 
+            z-index: 100;
+        }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #fff; letter-spacing: -0.5px; font-family: 'Space Grotesk', 'Kanit'; }
+        .logo span { color: var(--buu-gold); }
+        .logo-sub { font-size: 0.75rem; color: var(--text-sub); display: block; font-weight: 400; letter-spacing: 1px; margin-top: -2px; }
+        
+        .nav-menu { list-style: none; margin-top: 2rem; }
+        .nav-menu li { margin-bottom: 0.8rem; }
+        .nav-menu a {
+            color: var(--text-sub); text-decoration: none; display: flex; align-items: center; gap: 14px;
+            padding: 14px 18px; border-radius: 14px; font-size: 1.05rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+        .nav-menu a:hover, .nav-menu a.active {
+            background: var(--buu-gold-light); 
+            border-color: var(--buu-gold); 
+            color: #fff; 
+            transform: translateX(6px);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+        }
+        .nav-menu a.active i { color: var(--buu-gold); }
+
+        .target-box { 
+            background: linear-gradient(135deg, rgba(175, 175, 174, 0.15), rgba(106, 109, 117, 0.8)); 
+            border: 1px solid var(--buu-gold); 
+            padding: 1.2rem; 
+            border-radius: 16px; 
+            text-align: center; 
+        }
+        .target-box h4 { color: var(--buu-gold); font-size: 1.05rem; font-weight: 700; }
+        .target-box p { font-size: 0.85rem; color: var(--text-sub); margin-top: 2px; }
+
+        .main-content { margin-left: var(--nav-width); padding: 3.5rem; width: calc(100% - var(--nav-width)); display: flex; align-items: center; justify-content: center; }
+        
+        .welcome-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 3rem;
+            border-radius: 30px;
+            max-width: 900px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .welcome-text h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; line-height: 1.2; }
+        .welcome-text h1 span { color: var(--buu-gold); }
+        .welcome-text p { color: var(--text-sub); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
+        .welcome-img { width: 100%; height: 320px; object-fit: cover; border-radius: 20px; border: 1px solid var(--card-border); }
+        
+        .btn-enter {
+            background: var(--buu-gold);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .btn-enter:hover { background: var(--buu-gold-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3); }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="logo">
+                KNOT<span>.ART</span>
+                <span class="logo-sub">BUU FINE ARTS PORTFOLIO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user-ninja"></i> ประวัติส่วนตัว</a></li>
+                <li><a href="sop.html"><i class="fa-solid fa-compass"></i> เป้าหมาย & SOP</a></li>
+                <li><a href="training.html"><i class="fa-solid fa-certificate"></i> ประวัติการอบรม</a></li>
+                <li><a href="competition.html"><i class="fa-solid fa-trophy"></i> การแข่งขัน</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-paper-plane"></i> ช่องทางติดต่อ</a></li>
+            </ul>
+        </div>
+        <div class="target-box">
+            <h4><i class="fa-solid fa-university"></i> BUU TARGET</h4>
+            <p>คณะศิลปกรรมศาสตร์ ม.บูรพา</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="welcome-card">
+            <div class="welcome-text">
+                <span style="color: var(--buu-gold); font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">WELCOME TO MY PORTFOLIO</span>
+                <h1>ยินดีต้อนรับสู่ <span>แฟ้มสะสมผลงาน</span></h1>
+                <p>
+                    สวัสดีครับ ผมนายปิยพัทธ์ โตมา (น็อต) เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมประวัติการศึกษา ผลงานการแข่งขัน และความมุ่งมั่นตั้งใจในการศึกษาต่อคณะศิลปกรรมศาสตร์ มหาวิทยาลัยบูรพา ขอเชิญทุกท่านเยี่ยมชมผลงานครับ
+                </p>
+                <a href="profile.html" class="btn-enter">เข้าสู่พอร์ตโฟลิโอ <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div>
+                <img src="S__12533773.jpg" alt="ยินดีต้อนรับ" class="welcome-img">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

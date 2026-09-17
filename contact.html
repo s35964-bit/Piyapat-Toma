@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ช่องทางติดต่อ - ปิยพัทธ์ โตมา (BUU Theme)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --buu-gold: #f59e0b;
+            --buu-gold-hover: #d97706;
+            --buu-gold-light: rgba(245, 158, 11, 0.12);
+            --bg-color: #fcfdff;
+            --card-bg: #6d6d6d;
+            --card-border: rgba(150, 133, 80, 0.911);
+            --text-main: #141516;
+            --text-sub: #fdfdfd;
+            --nav-width: 270px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            display: flex; 
+            min-height: 100vh; 
+            background-image: radial-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 0); 
+            background-size: 28px 28px; 
+        }
+        
+        .sidebar {
+            width: var(--nav-width); 
+            background: #2c2c2b; 
+            padding: 2.5rem 1.5rem; 
+            position: fixed; 
+            height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            border-right: 1px solid var(--card-border); 
+            z-index: 100;
+        }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #fff; letter-spacing: -0.5px; font-family: 'Space Grotesk', 'Kanit'; }
+        .logo span { color: var(--buu-gold); }
+        .logo-sub { font-size: 0.75rem; color: var(--text-sub); display: block; font-weight: 400; letter-spacing: 1px; margin-top: -2px; }
+
+        .nav-menu { list-style: none; margin-top: 2rem; }
+        .nav-menu li { margin-bottom: 0.8rem; }
+        .nav-menu a {
+            color: var(--text-sub); text-decoration: none; display: flex; align-items: center; gap: 14px;
+            padding: 14px 18px; border-radius: 14px; font-size: 1.05rem; transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .nav-menu a:hover, .nav-menu a.active {
+            background: var(--buu-gold-light); 
+            border-color: var(--buu-gold); 
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+        }
+        .nav-menu a.active i { color: var(--buu-gold); }
+
+        .target-box { 
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(15, 23, 42, 0.8)); 
+            border: 1px solid var(--buu-gold); 
+            padding: 1.2rem; 
+            border-radius: 16px; 
+            text-align: center; 
+        }
+        .target-box h4 { color: var(--buu-gold); font-size: 1.05rem; font-weight: 700; }
+        .target-box p { font-size: 0.85rem; color: var(--text-sub); margin-top: 2px; }
+
+        .main-content { margin-left: var(--nav-width); padding: 3.5rem; width: calc(100% - var(--nav-width)); }
+
+        .page-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 2.5rem; }
+        .page-title span { color: var(--buu-gold); font-weight: 400; font-size: 1.5rem; margin-left: 10px; }
+
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .contact-card {
+            background: var(--card-bg); 
+            border-radius: 24px; 
+            padding: 2rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 1.5rem;
+            text-decoration: none; 
+            color: #fff; 
+            border: 1px solid var(--card-border); 
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .contact-card:hover {
+            transform: translateY(-6px); 
+            border-color: var(--buu-gold);
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.15);
+        }
+        .icon-box {
+            width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; flex-shrink: 0; box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        .ig .icon-box { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+        .fb .icon-box { background: #1877f2; color: #fff; }
+        .phone .icon-box { background: #10b981; color: #fff; }
+        .email .icon-box { background: var(--buu-gold); color: #000; }
+
+        .contact-details span { font-size: 0.8rem; color: var(--text-sub); font-weight: 600; letter-spacing: 1px; }
+        .contact-details h3 { font-size: 1.15rem; margin-top: 2px; font-weight: 700; word-break: break-all; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="logo">
+                KNOT<span>.ART</span>
+                <span class="logo-sub">BUU FINE ARTS PORTFOLIO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user-ninja"></i> ประวัติส่วนตัว</a></li>
+                <li><a href="sop.html"><i class="fa-solid fa-compass"></i> เป้าหมาย & SOP</a></li>
+                <li><a href="training.html"><i class="fa-solid fa-certificate"></i> ประวัติการอบรม</a></li>
+                <li><a href="competition.html"><i class="fa-solid fa-trophy"></i> การแข่งขัน</a></li>
+                <li><a href="contact.html" class="active"><i class="fa-solid fa-paper-plane"></i> ช่องทางติดต่อ</a></li>
+            </ul>
+        </div>
+        <div class="target-box">
+            <h4><i class="fa-solid fa-university"></i> BUU TARGET</h4>
+            <p>คณะศิลปกรรมศาสตร์ ม.บูรพา</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title"><i class="fa-solid fa-headset"></i> GET IN TOUCH <span>ช่องทางการติดต่อ</span></h1>
+
+        <div class="contact-grid">
+            <a href="https://instagram.com/Piyaphan_toma" target="_blank" class="contact-card ig">
+                <div class="icon-box"><i class="fa-brands fa-instagram"></i></div>
+                <div class="contact-details">
+                    <span>INSTAGRAM</span>
+                    <h3>Piyaphan_toma</h3>
+                </div>
+            </a>
+
+            <a href="https://facebook.com" target="_blank" class="contact-card fb">
+                <div class="icon-box"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="contact-details">
+                    <span>FACEBOOK</span>
+                    <h3>Piyaphan Toma</h3>
+                </div>
+            </a>
+
+            <a href="tel:0820615191" class="contact-card phone">
+                <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-details">
+                    <span>PHONE NUMBER</span>
+                    <h3>082-061-5191</h3>
+                </div>
+            </a>
+
+            <a href="mailto:piyapattoma51@gmail.com" class="contact-card email">
+                <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-details">
+                    <span>EMAIL ADDRESS</span>
+                    <h3>piyapattoma51@gmail.com</h3>
+                </div>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>

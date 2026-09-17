@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP & Motivation - ปิยพัทธ์ โตมา (BUU Theme)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --buu-gold: #f59e0b;
+            --buu-gold-hover: #d97706;
+            --buu-gold-light: rgba(245, 158, 11, 0.12);
+            --bg-color: #fcfdff;
+            --card-bg: #6d6d6d;
+            --card-border: rgba(150, 133, 80, 0.911);
+            --text-main: #141516;
+            --text-sub: #fdfdfd;
+            --nav-width: 270px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            display: flex; 
+            min-height: 100vh; 
+            background-image: radial-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 0); 
+            background-size: 28px 28px; 
+        }
+        
+        .sidebar {
+            width: var(--nav-width); 
+            background: #2c2c2b; 
+            padding: 2.5rem 1.5rem; 
+            position: fixed; 
+            height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            border-right: 1px solid var(--card-border); 
+            z-index: 100;
+        }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #fff; letter-spacing: -0.5px; font-family: 'Space Grotesk', 'Kanit'; }
+        .logo span { color: var(--buu-gold); }
+        .logo-sub { font-size: 0.75rem; color: var(--text-sub); display: block; font-weight: 400; letter-spacing: 1px; margin-top: -2px; }
+
+        .nav-menu { list-style: none; margin-top: 2rem; }
+        .nav-menu li { margin-bottom: 0.8rem; }
+        .nav-menu a {
+            color: var(--text-sub); text-decoration: none; display: flex; align-items: center; gap: 14px;
+            padding: 14px 18px; border-radius: 14px; font-size: 1.05rem; transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .nav-menu a:hover, .nav-menu a.active {
+            background: var(--buu-gold-light); 
+            border-color: var(--buu-gold); 
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+        }
+        .nav-menu a.active i { color: var(--buu-gold); }
+
+        .target-box { 
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(15, 23, 42, 0.8)); 
+            border: 1px solid var(--buu-gold); 
+            padding: 1.2rem; 
+            border-radius: 16px; 
+            text-align: center; 
+        }
+        .target-box h4 { color: var(--buu-gold); font-size: 1.05rem; font-weight: 700; }
+        .target-box p { font-size: 0.85rem; color: var(--text-sub); margin-top: 2px; }
+
+        .main-content { margin-left: var(--nav-width); padding: 3.5rem; width: calc(100% - var(--nav-width)); }
+
+        .uni-header {
+            background: var(--card-bg); 
+            border-radius: 28px; 
+            padding: 2.5rem; 
+            display: flex; 
+            align-items: center;
+            gap: 2.5rem; 
+            border: 1px solid var(--card-border); 
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3); 
+            position: relative; 
+            overflow: hidden;
+        }
+        .uni-header::after { 
+            content: ''; 
+            position: absolute; 
+            right: -30px; top: -30px; 
+            width: 200px; height: 200px; 
+            background: rgba(245, 158, 11, 0.1); 
+            filter: blur(50px); 
+            border-radius: 50%; 
+        }
+        .uni-logo { 
+            width: 140px; 
+            height: auto; 
+            border-radius: 16px; 
+            background: #fff; 
+            padding: 10px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+        }
+        .uni-text h2 { font-size: 2.2rem; font-weight: 800; color: #fff; }
+        .uni-text h3 { color: var(--buu-gold); font-weight: 600; font-size: 1.35rem; margin-top: 4px; }
+        .uni-text p { color: var(--text-sub); font-size: 1.05rem; margin-top: 8px; font-weight: 400; }
+
+        .sop-card {
+            background: var(--card-bg); 
+            border-radius: 28px; 
+            overflow: hidden; 
+            margin-bottom: 2.5rem;
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        .sop-card:hover { border-color: var(--buu-gold); transform: translateY(-4px); }
+        .sop-img-wrapper { position: relative; overflow: hidden; min-height: 350px; }
+        .sop-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .sop-card:hover .sop-img { transform: scale(1.05); }
+        .sop-content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+        .sop-title { font-size: 1.5rem; font-weight: 800; color: var(--buu-gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 12px; }
+        .sop-desc { color: var(--text-sub); font-size: 1.05rem; line-height: 1.8; text-indent: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="logo">
+                KNOT<span>.ART</span>
+                <span class="logo-sub">BUU FINE ARTS PORTFOLIO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user-ninja"></i> ประวัติส่วนตัว</a></li>
+                <li><a href="sop.html" class="active"><i class="fa-solid fa-compass"></i> เป้าหมาย & SOP</a></li>
+                <li><a href="training.html"><i class="fa-solid fa-certificate"></i> ประวัติการอบรม</a></li>
+                <li><a href="competition.html"><i class="fa-solid fa-trophy"></i> การแข่งขัน</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-paper-plane"></i> ช่องทางติดต่อ</a></li>
+            </ul>
+        </div>
+        <div class="target-box">
+            <h4><i class="fa-solid fa-university"></i> BUU TARGET</h4>
+            <p>คณะศิลปกรรมศาสตร์ ม.บูรพา</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="uni-header">
+            <img src="Buu-logo11.png" alt="มหาวิทยาลัยบูรพา" class="uni-logo">
+            <div class="uni-text">
+                <h2>มหาวิทยาลัยบูรพา (BUU)</h2>
+                <h3>คณะศิลปกรรมศาสตร์</h3>
+                <p><i class="fa-solid fa-palette"></i> สาขาทัศนศิลป์ หลักสูตร วิชาครีเอทีฟอาร์ตและกราฟิกครีเอทีฟ</p>
+            </div>
+        </div>
+
+        <div class="sop-card">
+            <div class="sop-content">
+                <h3 class="sop-title"><i class="fa-solid fa-heart-pulse"></i> ทำไมต้องเป็นคณะศิลปกรรมศาสตร์?</h3>
+                <p class="sop-desc">
+                    กระผมนายปิยพัทธ์ โตมา ชื่อเล่นชื่อน็อต มีความสนใจและชื่นชอบทางด้านศิลปะมาตั้งแต่เด็กแล้ว แรงบันดาลใจที่ผมชอบในการวาดรูปได้มาจากตอนเด็ก ผมเห็นภาพที่น้าผมวาดแล้วมีความสุขทำให้เกิดรอยยิ้มได้ แล้วผมก็สนุกกับมัน เพราะฉะนั้นผมมีความมุ่งมั่นอย่างยิ่งในการอยากศึกษาทางด้านศิลปะ ให้มีความสามารถมากขึ้นเพื่อสร้างรอยยิ้มให้กับทุกคน
+                </p>
+            </div>
+            <div class="sop-img-wrapper">
+                <img src="S__11083812.jpg" alt="ทำไมต้องเป็นคณะศิลปกรรมศาสตร์" class="sop-img">
+            </div>
+        </div>
+
+        <div class="sop-card">
+            <div class="sop-img-wrapper">
+                <img src="S__11083817.jpg" alt="ทำไมต้องเป็นสาขาครีเอทีฟอาร์ตและกราฟิกครีเอทีฟ" class="sop-img">
+            </div>
+            <div class="sop-content">
+                <h3 class="sop-title"><i class="fa-solid fa-cube"></i> ทำไมต้องเป็นสาขาครีเอทีฟอาร์ตและกราฟิกครีเอทีฟ?</h3>
+                <p class="sop-desc">
+                    ผมได้เกิดความคิดในการที่จะพัฒนาทางด้านศิลปะของผมให้อยู่ในรูปแบบของทางด้าน โมเดล หรือ 3D เพื่อพัฒนาตามยุคและสมัยที่เปลี่ยนแปลงไปให้ดีกว่าเดิมยิ่งขึ้น
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
