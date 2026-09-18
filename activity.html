@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กิจกรรม - ปิยพัทธ์ โตมา (BUU Theme)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --buu-gold: #f59e0b;
+            --buu-gold-hover: #d97706;
+            --buu-gold-light: rgba(245, 158, 11, 0.12);
+            --bg-color: #fcfdff;
+            --card-bg: #6d6d6d;
+            --card-border: rgba(150, 133, 80, 0.911);
+            --text-main: #141516;
+            --text-sub: #fdfdfd;
+            --nav-width: 270px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            display: flex; 
+            min-height: 100vh; 
+            background-image: radial-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 0); 
+            background-size: 28px 28px; 
+        }
+        
+        .sidebar {
+            width: var(--nav-width); 
+            background: #2c2c2b; 
+            padding: 2.5rem 1.5rem; 
+            position: fixed; 
+            height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            border-right: 1px solid var(--card-border); 
+            z-index: 100;
+        }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #fff; letter-spacing: -0.5px; font-family: 'Space Grotesk', 'Kanit'; }
+        .logo span { color: var(--buu-gold); }
+        .logo-sub { font-size: 0.75rem; color: var(--text-sub); display: block; font-weight: 400; letter-spacing: 1px; margin-top: -2px; }
+
+        .nav-menu { list-style: none; margin-top: 2rem; }
+        .nav-menu li { margin-bottom: 0.8rem; }
+        .nav-menu a {
+            color: var(--text-sub); text-decoration: none; display: flex; align-items: center; gap: 14px;
+            padding: 14px 18px; border-radius: 14px; font-size: 1.05rem; transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .nav-menu a:hover, .nav-menu a.active {
+            background: var(--buu-gold-light); 
+            border-color: var(--buu-gold); 
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+        }
+        .nav-menu a.active i { color: var(--buu-gold); }
+
+        .target-box { 
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(15, 23, 42, 0.8)); 
+            border: 1px solid var(--buu-gold); 
+            padding: 1.2rem; 
+            border-radius: 16px; 
+            text-align: center; 
+        }
+        .target-box h4 { color: var(--buu-gold); font-size: 1.05rem; font-weight: 700; }
+        .target-box p { font-size: 0.85rem; color: var(--text-sub); margin-top: 2px; }
+
+        .main-content { margin-left: var(--nav-width); padding: 3.5rem; width: calc(100% - var(--nav-width)); }
+
+        .page-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 2.5rem; }
+        .page-title span { color: var(--buu-gold); font-weight: 400; font-size: 1.5rem; margin-left: 10px; }
+
+        .cert-container { display: flex; flex-direction: column; gap: 2.5rem; }
+        .cert-card {
+            background: var(--card-bg); 
+            border-radius: 28px; 
+            padding: 2.5rem;
+            display: grid; 
+            grid-template-columns: 360px 1fr; 
+            gap: 2.5rem; 
+            border: 1px solid var(--card-border);
+            align-items: center; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        .cert-card:hover { border-color: var(--buu-gold); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .cert-img-wrapper { overflow: hidden; border-radius: 18px; position: relative; }
+        .cert-img { width: 100%; height: 230px; object-fit: cover; transition: transform 0.5s ease; border-radius: 12px; }
+        .cert-card:hover .cert-img { transform: scale(1.06); }
+        .cert-info h3 { color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 12px; }
+        .cert-info h3 i { color: var(--buu-gold); }
+        .cert-info p { color: var(--text-sub); font-size: 1.05rem; line-height: 1.8; }
+        .badge-cert { 
+            background: var(--buu-gold-light); 
+            border: 1px solid var(--buu-gold); 
+            color: var(--buu-gold); 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            display: inline-block; 
+            margin-bottom: 12px; 
+            letter-spacing: 0.5px; 
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="logo">
+                KNOT<span>.ART</span>
+                <span class="logo-sub">BUU FINE ARTS PORTFOLIO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user-ninja"></i> ประวัติส่วนตัว</a></li>
+                <li><a href="sop.html"><i class="fa-solid fa-compass"></i> เป้าหมาย & SOP</a></li>
+                <li><a href="training.html"><i class="fa-solid fa-certificate"></i> ประวัติการอบรม</a></li>
+                <li><a href="competition.html"><i class="fa-solid fa-trophy"></i> การแข่งขัน</a></li>
+                <li><a href="activity.html" class="active"><i class="fa-solid fa-star"></i> กิจกรรม</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-paper-plane"></i> ช่องทางติดต่อ</a></li>
+            </ul>
+        </div>
+        <div class="target-box">
+            <h4><i class="fa-solid fa-university"></i> BUU TARGET</h4>
+            <p>คณะศิลปกรรมศาสตร์ ม.บูรพา</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title"><i class="fa-solid fa-star"></i> ACTIVITIES <span>กิจกรรมที่เข้าร่วม</span></h1>
+
+        <div class="cert-container">
+            <div class="cert-card">
+                <div class="cert-img-wrapper">
+                    <img src="S__11182094.jpg" alt="งาน Open House" class="cert-img">
+                </div>
+                <div class="cert-info">
+                    <span class="badge-cert">SCHOOL EVENT</span>
+                    <h3><i class="fa-solid fa-store"></i> เข้าร่วมกิจกรรมขายของในงาน Open House โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</h3>
+                    <p>
+                        เข้าร่วมกิจกรรมขายของในงาน Open House ของโรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์” ได้ฝึกฝนทักษะการทำงานร่วมกับผู้อื่น การสื่อสาร และการบริหารจัดการร้านค้าในงานกิจกรรมของโรงเรียน
+                    </p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-wrapper">
+                    <img src="S__11182098.jpg" alt="การแข่งขันกีฬาสีวอลเลย์บอล" class="cert-img">
+                </div>
+                <div class="cert-info">
+                    <span class="badge-cert">SPORTS & TEAMWORK</span>
+                    <h3><i class="fa-solid fa-volleyball"></i> การแข่งขันกีฬาสีวอลเลย์บอล (รางวัลที่ ๑)</h3>
+                    <p>
+                        เข้าร่วมการแข่งขันกีฬาสีวอลเลย์บอล และได้รับรางวัลชนะเลิศอันดับที่ ๑ แสดงถึงความมุ่งมั่น ตั้งใจ สปิริตนักกีฬา และการทำงานเป็นทีมร่วมกับเพื่อนๆ
+                    </p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-wrapper">
+                    <img src="S__11182096.jpg" alt="การแข่งขันฟุตบอลต้านยาเสพติด" class="cert-img">
+                </div>
+                <div class="cert-info">
+                    <span class="badge-cert">SPORTS & COMMUNITY</span>
+                    <h3><i class="fa-solid fa-futbol"></i> การแข่งขันฟุตบอลต้านยาเสพติด</h3>
+                    <p>
+                        เข้าร่วมการแข่งขันฟุตบอลต้านยาเสพติด เพื่อส่งเสริมสุขภาพ สรรสร้างความสามัคคี และใช้เวลาว่างให้เกิดประโยชน์สูงสุดผ่านการเล่นกีฬา
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
